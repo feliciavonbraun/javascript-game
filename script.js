@@ -3,8 +3,8 @@ let currentScene = 0;
 
 const scenes = [
     {   //SCENE 0
-        description: "Du sitter på flyget och flygvärdinnan frågar om vilket vin du vill ha?",
-        choices: ["rött", "vitt"],
+        description: "You're in your flight and the air-hostess is asking what kind of wine you want?",
+        choices: ["Red", "White"],
         nextScene: [1,1]
     },
     {   //SCENE 1
@@ -13,22 +13,22 @@ const scenes = [
         nextScene: [3,2]
     },
     {   //SCENE 2 LUGN
-        description: "Du tar på dig syrgasmasken. Personalen delar ut fallskärmar. Hoppar du först eller sist?",
-        choices: ["sist", "först"],
+        description: "You put on the oxygen mask. The staff hand out parachutes. Are you the first or last one who jumpes?",
+        choices: ["Last", "First"],
         nextScene: [5,4]
     },
     {   //SCENE 3 RINGER GAME OVER
-        description: "Du missar att sätta på dig masken när du pratar i telefon och tuppar av. GAME OVER. Vill du spela igen?",
+        description: "You fail to put on the mask when talking on the phone and ROBBING???. GAME OVER. Do you want to play again?",
         choices: ["Ja", "Nej"],
         nextScene: [0,0]
     },
     {   //SCENE 4 FÖRST GAME OVER
-        description: "Du hoppar först, landar i havet och drunknar. GAME OVER. Vill du spela igen?",
+        description: "You jump first, land in the sea and drown. GAME OVER. Do you want to play again?",
         choices: ["ja wiihoo", "nej aldrig"],
         nextScene: [0,0]
     },
     {   //SCENE 5 SIST MÅL
-        description: "Du hoppar sist, landar på en Hawaii och lever lyclig i alla dina dar. VIll du spela igen?",
+        description: "Your the last one to jump and you land on Hawaii and live happily ever after. Do you want to play again?",
         choices: ["Jaddåååå", "Nooooooo"],
         nextScene: [0,0]
     },
@@ -40,6 +40,7 @@ const scenes = [
 
 
 //FUNKTIONERNA SOM GÖR ATT KNAPPARNA ÄNDRAS
+//FAST ÄR INTE DETTA UNDER HANDLEUTSERCHOISE????
 function pressOptionOne() {
     alert ('hej')
 }
@@ -47,6 +48,9 @@ function pressOptionOne() {
 function pressOptionTwo(){
     alert ('då')
 }
+
+
+
 
 
 
@@ -65,6 +69,7 @@ function presentScene() {
 }
 
 // SKA HANTERA VILKET ANVÄNDAREN TRYCKER PÅ
+// SKA JAG SÄTTA IN ONCLIK NAMNEN HÄR? 
 function handleUserChoise(answer) {
     console.log(answer);
 
@@ -77,7 +82,7 @@ function handleUserChoise(answer) {
     }
 
     if (answer === scenes[currentScene].choices[2]) {
-        currentScene = scenes[currentScene].nextScene[2];
+        currentScene = scenes[currentScene].nextScene[2]; //behöver kanske inte förtsätta utan alla ska gå automatiskt
     }
 
     presentScene() //betyder detta är den scenen slutar här??
