@@ -1,7 +1,3 @@
-function pressOptionOne() {
-    alert ('hej')
-}
-
 //DEFINERA ALLA SCENER I SPELET
 let currentScene = 0;
 
@@ -42,6 +38,19 @@ const scenes = [
 
 
 
+
+//FUNKTIONERNA SOM GÖR ATT KNAPPARNA ÄNDRAS
+function pressOptionOne() {
+    alert ('hej')
+}
+
+function pressOptionTwo(){
+    alert ('då')
+}
+
+
+
+
 // SKA BYTA TEXTEN PÅ P OCH KNAPPARNA. och starta vid laddning av sidan
 window.onload = presentScene;
 
@@ -51,6 +60,8 @@ function presentScene() {
     const btn2 = document.getElementById("btn2") 
     console.log (btn1, btn2)
     textWhoChange.innerHTML = scenes[currentScene].description; //decription kommer från scenerna
+    btn1.innerHTML = scenes[currentScene].choices[1];
+    btn2.innerHTML = scenes[currentScene].choices[0]; //dessa kommer ändras till 12345, hur gör man då???
 }
 
 // SKA HANTERA VILKET ANVÄNDAREN TRYCKER PÅ
