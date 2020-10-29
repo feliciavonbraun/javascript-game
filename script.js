@@ -13,27 +13,37 @@ const scenes = [
         choices: ["CALLING FAMILY", "STAYING CALM"],
         nextScene: [3,2]
     },
-    {   //SCENE 2 LUGN
+    {   //SCENE 2 KEEP CALM
         description: "You put on the oxygen mask. The staff hands out parachutes. Are you the first or last one who jumpes?",
         choices: ["LAST", "FIRST"],
-        nextScene: [5,4]
+        nextScene: [7,4]
     },
     {   //SCENE 3 RINGER GAME OVER
         description: "You fail to put on the mask when talking on the phone and faint. GAME OVER. Do you want to play again?",
         choices: ["YES", "NO"],
-        nextScene: [0,6]
+        nextScene: [0,8]
     },
-    {   //SCENE 4 FÖRST GAME OVER
-        description: "You jump first, land in the sea and drown. GAME OVER. Do you want to play again?",
-        choices: ["YES", "PLS NO"],
-        nextScene: [0,6]
+    {   //SCENE 4 FIRST
+        description: "Do you know how to swim?",
+        choices: ["YES", "NO"],
+        nextScene: [5,6]
     },
-    {   //SCENE 5 SIST MÅL
+    {   //SCENE 5 KNOW HOW TO SWIM
+        description: "You swim for as long as you can but it's not enough. Sadly you drown. Do you want to play again?",
+        choices: ["YES", "NO"],
+        nextScene: [0,8]
+    },
+    {   //SCENE 6 DONT KNOW HOW TO SWIM
+        description: "GAME OVER. You dont know how to swim and drown. Do you want to play again?",
+        choices: ["YES", "NO"],
+        nextScene: [0,8]
+    },
+    {   //SCENE 7 LAST MÅL
         description: "Your the last one to jump and you land on Hawaii and live happily ever after. Do you want to play again?",
         choices: ["YAAS", "NO"],
-        nextScene: [0,0]
+        nextScene: [0,8]
     },
-    {   //SCENE 6 GOODBYE
+    {   //SCENE 8 GOODBYE
         description: "Thanks for playing. GOODBYE.",
         choices: [],
         nextScene: []
