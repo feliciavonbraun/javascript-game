@@ -13,12 +13,12 @@ const scenes = [ //ska det va hårdklammer här eller måsvinge????
         nextScene: [3,2]
     },
     {   //SCENE 2 LUGN
-        description: "You put on the oxygen mask. The staff hand out parachutes. Are you the first or last one who jumpes?",
+        description: "You put on the oxygen mask. The staff hands out parachutes. Are you the first or last one who jumpes?",
         choices: ["Last", "First"],
         nextScene: [5,4]
     },
     {   //SCENE 3 RINGER GAME OVER
-        description: "You fail to put on the mask when talking on the phone and ROBBING???. GAME OVER. Do you want to play again?",
+        description: "You fail to put on the mask when talking on the phone and faint. GAME OVER. Do you want to play again?",
         choices: ["Ja", "Nej"],
         nextScene: [0,0]
     },
@@ -33,52 +33,6 @@ const scenes = [ //ska det va hårdklammer här eller måsvinge????
         nextScene: [0,0]
     },
 ]
-//Får man ha gameover ställen att man inte kommer någonstans?? ja
-
-
-
-
-
-
-
-
-
-
-//FUNKTIONERNA SOM GÖR ATT KNAPPARNA ÄNDRAS
-//FAST ÄR INTE DETTA UNDER HANDLEUTSERCHOICE????
-function pressOptionOne(scene) {
-    alert ('hej')
-
-    for (let i = 0; i < scene.choices.length; i++) { //i indikerar att nästa scen alltid körs
-        const option = scene.choices[i]; 
-        const nextScene = scene.nextScene [i];
-
-        const btn1  = document.createElement('button');
-        btn1.innerHTML = option; 
-        button.onclick = function() {
-            handleUserChoice(nextScene);
-        }
-    }
-
-
-
-    const option = scene[currentScene].choices[0]; //ANY???
-
-
-
-    //upddatera sidan med knappen: 
-    const container = document.getElementById('choices-container');
-    container.append(btn1);
-}
-
-function pressOptionTwo(){
-    alert ('då')
-}
-
-//CURRENT SCENE OCH SCENE ÄR DET OLIKA???
-
-
-
 
 
 
@@ -98,12 +52,15 @@ function presentScene() {
     btn1.onclick = function () {
         handleUserChoice(scenes[currentScene].nextScene[0])
     }
+    btn2.onclick = function () {
+        handleUserChoice(scenes[currentScene].nextScene[1])
+    }
 }
 
 // SKA HANTERA VILKET ANVÄNDAREN TRYCKER PÅ
 // SKA JAG SÄTTA IN ONCLIK NAMNEN HÄR? 
 function handleUserChoice(nextScene) {
-    console.log(answer);
+    console.log(nextScene);
 
     //skapa en scen som kör om det inte finns några val, game over HÄR
 
