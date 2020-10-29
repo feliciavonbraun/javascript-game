@@ -1,46 +1,50 @@
 //DEFINERA ALLA SCENER I SPELET
 let currentScene = 0;
 
-const scenes = [ //ska det va hårdklammer här eller måsvinge????
+/** All the scenes */
+const scenes = [ 
     {   //SCENE 0
         description: "You're in your flight and the air-hostess is asking what kind of wine you want?",
-        choices: ["Red", "White"],
+        choices: ["RED", "WHITE"],
         nextScene: [1,1]
     },
     {   //SCENE 1
-        description: "Det blir en enorm turbulens. Bältet måste på. Ringer du din familj i panik eller håller dig lung?",
-        choices: ["ringer", "lugn"],
+        description: "A huge turbulence occurs. The belt must be put on. Are you calling your family in a panic for a last good bye or are you staying calm and hoping for the best?",
+        choices: ["CALLING FAMILY", "STAYING CALM"],
         nextScene: [3,2]
     },
     {   //SCENE 2 LUGN
         description: "You put on the oxygen mask. The staff hands out parachutes. Are you the first or last one who jumpes?",
-        choices: ["Last", "First"],
+        choices: ["LAST", "FIRST"],
         nextScene: [5,4]
     },
     {   //SCENE 3 RINGER GAME OVER
         description: "You fail to put on the mask when talking on the phone and faint. GAME OVER. Do you want to play again?",
-        choices: ["Ja", "Nej"],
-        nextScene: [0,0]
+        choices: ["YES", "NO"],
+        nextScene: [0,6]
     },
     {   //SCENE 4 FÖRST GAME OVER
         description: "You jump first, land in the sea and drown. GAME OVER. Do you want to play again?",
-        choices: ["ja wiihoo", "nej aldrig"],
-        nextScene: [0,0]
+        choices: ["YES", "PLS NO"],
+        nextScene: [0,6]
     },
     {   //SCENE 5 SIST MÅL
         description: "Your the last one to jump and you land on Hawaii and live happily ever after. Do you want to play again?",
-        choices: ["Jaddåååå", "Nooooooo"],
+        choices: ["YAAS", "NO"],
         nextScene: [0,0]
     },
+    {   //SCENE 6 GOODBYE
+        description: "Thanks for playing. GOODBYE.",
+        choices: [],
+        nextScene: []
+    }
 ]
-
-
-
 
 
 // SKA BYTA TEXTEN PÅ P OCH KNAPPARNA. och starta vid laddning av sidan
 window.onload = presentScene;
 
+/** The active secene on webpage. */
 function presentScene() {
     const textWhoChange = document.getElementById("textWhoChange") //se till att början blir ljusblå och läs felmeddelandet
     const btn1 = document.getElementById("btn1") // ska det va ' eller " ???
@@ -58,14 +62,25 @@ function presentScene() {
 }
 
 // SKA HANTERA VILKET ANVÄNDAREN TRYCKER PÅ
-// SKA JAG SÄTTA IN ONCLIK NAMNEN HÄR? 
+/** Handles user choise and presents the next scene */
 function handleUserChoice(nextScene) {
     console.log(nextScene);
 
-    //skapa en scen som kör om det inte finns några val, game over HÄR
 
-    //Davids genomgång: kanske kan ta bort all ovan kod
-        currentScene = nextScene; 
-        presentScene(); 
+    currentScene = nextScene; 
+    presentScene(); 
 
+    //skapa en scen som kör om det inte finns några val, game over 
+
+}
+
+// function sayingGoodbye() {
+//     scene[6] = 
+//     console.log 
+// }
+
+
+//EN FUNKTION SOM LADDAR OM SIDAN NÄR MAN TRYCKER PÅ H1
+function realoadPage(){
+    window.realoadPage
 }
