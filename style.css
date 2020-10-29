@@ -10,8 +10,7 @@ h1 {
 
 main {
     background: darkslategrey;
-    height: 100%; 
-    /* varför blir den inte 100%????  */
+    height: 100vh; 
     color: whitesmoke;
     display: flex;
     flex-direction: column;

@@ -1,7 +1,7 @@
 //DEFINERA ALLA SCENER I SPELET
 let currentScene = 0;
 
-const scenes = [
+const scenes = [ //ska det va hårdklammer här eller måsvinge????
     {   //SCENE 0
         description: "You're in your flight and the air-hostess is asking what kind of wine you want?",
         choices: ["Red", "White"],
@@ -33,21 +33,50 @@ const scenes = [
         nextScene: [0,0]
     },
 ]
-//Får man ha gameover ställen att man inte kommer någonstans??
+//Får man ha gameover ställen att man inte kommer någonstans?? ja
+
+
+
+
+
 
 
 
 
 
 //FUNKTIONERNA SOM GÖR ATT KNAPPARNA ÄNDRAS
-//FAST ÄR INTE DETTA UNDER HANDLEUTSERCHOISE????
-function pressOptionOne() {
+//FAST ÄR INTE DETTA UNDER HANDLEUTSERCHOICE????
+function pressOptionOne(scene) {
     alert ('hej')
+
+    for (let i = 0; i < scene.choices.length; i++) { //i indikerar att nästa scen alltid körs
+        const option = scene.choices[i]; 
+        const nextScene = scene.nextScene [i];
+
+        const btn1  = document.createElement('button');
+        btn1.innerHTML = option; 
+        button.onclick = function() {
+            handleUserChoice(nextScene);
+        }
+    }
+
+
+
+    const option = scene[currentScene].choices[0]; //ANY???
+
+
+
+    //upddatera sidan med knappen: 
+    const container = document.getElementById('choices-container');
+    container.append(btn1);
 }
 
 function pressOptionTwo(){
     alert ('då')
 }
+
+//CURRENT SCENE OCH SCENE ÄR DET OLIKA???
+
 
 
 
@@ -60,30 +89,26 @@ window.onload = presentScene;
 
 function presentScene() {
     const textWhoChange = document.getElementById("textWhoChange") //se till att början blir ljusblå och läs felmeddelandet
-    const btn1 = document.getElementById("btn1")
+    const btn1 = document.getElementById("btn1") // ska det va ' eller " ???
     const btn2 = document.getElementById("btn2") 
     console.log (btn1, btn2)
     textWhoChange.innerHTML = scenes[currentScene].description; //decription kommer från scenerna
-    btn1.innerHTML = scenes[currentScene].choices[1];
-    btn2.innerHTML = scenes[currentScene].choices[0]; //dessa kommer ändras till 12345, hur gör man då???
+    btn1.innerHTML = scenes[currentScene].choices[0];
+    btn2.innerHTML = scenes[currentScene].choices[1]; //dessa kommer ändras till 12345, hur gör man då???
+    btn1.onclick = function () {
+        handleUserChoice(scenes[currentScene].nextScene[0])
+    }
 }
 
 // SKA HANTERA VILKET ANVÄNDAREN TRYCKER PÅ
 // SKA JAG SÄTTA IN ONCLIK NAMNEN HÄR? 
-function handleUserChoise(answer) {
+function handleUserChoice(nextScene) {
     console.log(answer);
 
-    if (answer === scenes[currentScene].choices[0]) {
-        currentScene = scenes[currentScene].nextScene[0]; //kanske inte behöver ;
-    }
+    //skapa en scen som kör om det inte finns några val, game over HÄR
 
-    if (answer === scenes[currentScene].choices[1]) {
-        currentScene = scenes[currentScene].nextScene[1];
-    }
+    //Davids genomgång: kanske kan ta bort all ovan kod
+        currentScene = nextScene; 
+        presentScene(); 
 
-    if (answer === scenes[currentScene].choices[2]) {
-        currentScene = scenes[currentScene].nextScene[2]; //behöver kanske inte förtsätta utan alla ska gå automatiskt
-    }
-
-    presentScene() //betyder detta är den scenen slutar här??
 }
