@@ -91,6 +91,6 @@ function handleUserChoice(nextScene) {
 
 
 //EN FUNKTION SOM LADDAR OM SIDAN NÄR MAN TRYCKER PÅ H1
-function realoadPage(){
-    window.realoadPage
-}
+// function realoadPage(){
+//     window.realoadPage
+// }
