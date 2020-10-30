@@ -6,11 +6,13 @@ h1 {
     background: pink;
     padding: 1rem;
     border-radius: 10px;
+    text-align: center;
+    margin: 1rem;
 }
 
 main {
     background: darkslategrey;
-    height: 100vh; 
+    height: 100vh;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
