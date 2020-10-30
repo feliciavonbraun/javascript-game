@@ -85,7 +85,12 @@ function handleUserChoice(nextScene) {
 }
 
 // function sayingGoodbye() {
-//     scene[6] = 
+//     scene[8] = 
+      if answer === scene[currentScene] === [8] {
+        x.style.display === "none")
+
+      }
+        button
 //     console.log 
 // }
 
