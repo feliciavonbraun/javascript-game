@@ -1,7 +1,7 @@
 /** Set the startscene to 0 and let it change */
 let currentScene = 0;
 
-/** All the scenes */
+/** All the scenes one by one  */
 const scenes = [ 
     {   //SCENE 0
         description: "You're in your flight and the air-hostess is asking what kind of wine you want?",
@@ -68,7 +68,7 @@ function presentScene() {
     }
     else {
         btn1.innerHTML = scenes[currentScene].choices[0];
-        btn2.innerHTML = scenes[currentScene].choices[1]; //dessa kommer ändras till 12345, hur gör man då???
+        btn2.innerHTML = scenes[currentScene].choices[1];
         btn1.onclick = function () {
             handleUserChoice(scenes[currentScene].nextScene[0])
         }
