@@ -1,6 +1,6 @@
-# labration1-retry
+# A flight to paradise! 
 
-## A flight to paradise! 
+This is a game made with html, css and javascript made by me. 
 
 You're in a pleacent flight to paradise and drinking your favourit wine while suddenly there is a lot of turbulens. What you do is up to you. Press one of the buttons to keep yourself alive! Good luck! 
 
