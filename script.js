@@ -61,13 +61,20 @@ function presentScene() {
     const btn2 = document.getElementById("btn2") 
     console.log (btn1, btn2)
     textWhoChange.innerHTML = scenes[currentScene].description; //decription kommer från scenerna
-    btn1.innerHTML = scenes[currentScene].choices[0];
-    btn2.innerHTML = scenes[currentScene].choices[1]; //dessa kommer ändras till 12345, hur gör man då???
-    btn1.onclick = function () {
-        handleUserChoice(scenes[currentScene].nextScene[0])
+    
+    if (scenes[currentScene].choices.length === 0) {
+        btn1.style.display = "none";
+        btn2.style.display = "none";
     }
-    btn2.onclick = function () {
-        handleUserChoice(scenes[currentScene].nextScene[1])
+    else {
+        btn1.innerHTML = scenes[currentScene].choices[0];
+        btn2.innerHTML = scenes[currentScene].choices[1]; //dessa kommer ändras till 12345, hur gör man då???
+        btn1.onclick = function () {
+            handleUserChoice(scenes[currentScene].nextScene[0])
+        }
+        btn2.onclick = function () {
+            handleUserChoice(scenes[currentScene].nextScene[1])
+        }
     }
 }
 
@@ -84,18 +91,9 @@ function handleUserChoice(nextScene) {
 
 }
 
-// function sayingGoodbye() {
-//     scene[8] = 
-      if answer === scene[currentScene] === [8] {
-        x.style.display === "none")
-
-      }
-        button
-//     console.log 
-// }
-
-
 //EN FUNKTION SOM LADDAR OM SIDAN NÄR MAN TRYCKER PÅ H1
-// function realoadPage(){
-//     window.realoadPage
-// }
+function reloadPage(){
+    currentScene = 0;
+    presentScene();  
+      
+}
