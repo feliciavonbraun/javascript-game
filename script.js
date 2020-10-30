@@ -19,7 +19,7 @@ const scenes = [
         nextScene: [7,4]
     },
     {   //SCENE 3 RINGER GAME OVER
-        description: "You fail to put on the mask when talking on the phone and faint. GAME OVER. Do you want to play again?",
+        description: "GAME OVER. You fail to put on the mask when talking on the phone and faint. Do you want to play again?",
         choices: ["YES", "NO"],
         nextScene: [0,8]
     },
