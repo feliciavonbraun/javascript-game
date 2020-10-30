@@ -86,8 +86,10 @@ function handleUserChoice(nextScene) {
     presentScene(); 
 }
 
-/** Reloads page when pressing on h1*/
+/** Reloads page when pressing on h1 and displays buttons again*/
 function reloadPage(){
     currentScene = 0;
     presentScene();    
+    btn1.style.display = "block";
+    btn2.style.display = "block";
 }
